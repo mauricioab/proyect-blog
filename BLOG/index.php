@@ -6,7 +6,7 @@
         <div id="principal">
             <h1>Ultimas Entradas</h1>
 
-            <article class="entrada">   
+            <article class="test">   
                 <a href="">
                 <h2>Probando2</h2>
                 <p>Descripción de la entrada(Lorem ipsum dolor sit amet consectetur adipisicing elit.
