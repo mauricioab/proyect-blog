@@ -4,7 +4,7 @@ require_once 'funciones.php';
 
 
 
-//segundo comentario a git
+//desde notebook git
 
 if(isset($_POST))
 {
