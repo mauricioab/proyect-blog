@@ -3,7 +3,7 @@
 require_once 'funciones.php';
 
 
-//Comentario Prueba git.
+//Comentario preuba 2
 
 
 if(isset($_POST))
