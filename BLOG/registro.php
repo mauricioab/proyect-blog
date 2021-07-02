@@ -3,8 +3,13 @@
 require_once 'funciones.php';
 
 
+<<<<<<< HEAD
+//Comentario preuba 2
+
+=======
 
 //desde notebook git
+>>>>>>> develop
 
 if(isset($_POST))
 {
