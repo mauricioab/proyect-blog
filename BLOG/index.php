@@ -8,7 +8,7 @@
 
             <article class="entrada">   
                 <a href="">
-                <h2>Probando</h2>
+                <h2>Probando2</h2>
                 <p>Descripción de la entrada(Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Maiores ex vero autem asperiores similique exercitationem numquam explicabo, mollitia
                 deleniti nisi a? Praesentium, totam fuga minus dicta sit quisquam blanditiis illum.
