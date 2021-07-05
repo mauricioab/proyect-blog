@@ -1,10 +1,12 @@
 <?php require_once'includes/cabecera.php';?>
 <?php require_once'includes/lateral.php';?>
+
     
     
     <!-- CAJA PRINCIPAL-->
         <div id="principal">
             <h1>Ultimas Entradas</h1>
+            
 
             <article class="test">   
                 <a href="">

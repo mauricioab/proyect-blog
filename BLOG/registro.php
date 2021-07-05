@@ -1,24 +1,20 @@
 <?php
 
-require_once 'funciones.php';
-
-
-<<<<<<< HEAD
-//Comentario preuba 2
-
-=======
-
-//desde notebook git
->>>>>>> develop
 
 if(isset($_POST))
 {
+    session_start();
+    
+    require_once './includes/helpers.php';
+    //conexion a la base de datos
+    require_once './includes/conexion.php';
+    
     //Recoger valores
     $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
     $apellido = isset($_POST['apellido']) ? $_POST['apellido'] : false;
     $email = isset($_POST['email']) ? $_POST['email'] : false;
     $password = isset($_POST['password']) ? $_POST['password'] : false;
-
+    
 
     //array errores
     $errores = array();
@@ -54,11 +50,16 @@ if(isset($_POST))
 
     //validar campo email
 
+
     if(!empty ($email) && filter_var($email, FILTER_VALIDATE_EMAIL )  )
-    {
+    {   
         LimpiarDatos($email);
         $email_validado = true;
+        
+       
     }
+    
+
     else
     {   
         $email_validado = false;
@@ -78,18 +79,50 @@ if(isset($_POST))
     }
     
     $guardar_usuario = false;
+    var_dump($errores);
 
     if(count($errores) == 0 )
     {   
         $guardar_usuario = true;
+        //encryptar el password
+        $password_segura = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
+        $password = $password_segura;
+         
         //insertar usuario en DB
+        $sql = "INSERT INTO usuarios VALUES (null,'$nombre','$apellido','$email','$password', CURDATE())";
+        $guardar = mysqli_query($db,$sql);
+        
 
-
-    }
+        if ($guardar)
+        {
+            $_SESSION['completado'] = "Registro realizado con exito !";
+            
+                
+        }
+     
+        
+        else
+        {
+            $_SESSION['errores'] ['general'] = "Fallo al guardar el usuario";
+                
+        }
     
 
+    }
+    else
+    {   
+       //guardando errores en la session  
+       //echo "error no guardo nada";
+       $_SESSION['errores'] = $errores;
+       header('Location:index.php');
+       
+    }
 
+    
 }
+
+header('Location:index.php');
+
 
 
 ?>

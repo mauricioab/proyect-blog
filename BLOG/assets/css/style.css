@@ -226,8 +226,25 @@ input[type="submit"]{
     border:2px solid #156785;
 }
 
-.alert.error {
-	background: #F2DEDE;
-	border:1px solid #a94442;
-	color: #a94442;
+
+
+.alerta-exito{
+    padding: 2px;;
+    color: #133b07;
+    border:1px solid #133b07;
+	background-color: #bdf1cd;
+    text-shadow: #444;
+    text-align: center;
+
+
+}
+.alerta-error{
+    padding: 2px;;
+    color:#7c040e;
+    border:1px solid #7c040e;
+	background-color: #ecadad;
+
+    text-align: center;
+
+
 }
